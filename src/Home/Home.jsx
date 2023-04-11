@@ -9,15 +9,15 @@ import Header from "../Header/Header";
 function Home() {
 const[value,setValue]=useState('Untitled Document')
 const[color,setcolor]=useState('')
-const[Bgcolor,setBgcolor]=useState('red')
+// const[Bgcolor,setBgcolor]=useState('red')
 const printDiv = useRef("");
 
-useEffect(()=>{
-  if(color=='some'){
-    setBgcolor('green')
+// useEffect(()=>{
+//   if(color=='some'){
+//     setBgcolor('green')
         
-   }
-},[Bgcolor])
+//    }
+// },[Bgcolor])
 
 
 
@@ -69,7 +69,8 @@ useEffect(()=>{
 
     <button onClick={ downloadFile}  className={style.floaticon}><DownloadIcon style={{fontSize:"35px",color:"white"}}/></button>
     </div>
-    <div><input type='text' onChange={(e)=>setcolor(e.target.value)} style={{color:`${Bgcolor}`}} value={color}/></div>
+    {/* <div><input type='text' onChange={(e)=>setcolor(e.target.value)} 
+    style={{color:`${Bgcolor}`}} value={color}/></div> */}
 
     </>
   );
