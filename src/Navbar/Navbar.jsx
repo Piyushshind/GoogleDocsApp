@@ -169,7 +169,7 @@ function Navbar({ handleremoveFormat, printDiv }) {
         <div className={style.fontsizecontainer}>
           <div className={style.fontlist}>
             <select onChange={(e) => handleFont(e)}>
-              <option>1</option>
+              
               {icons.map((element) => (
                 <option>{element.icon}</option>
               ))}
@@ -202,12 +202,7 @@ function Navbar({ handleremoveFormat, printDiv }) {
           </select>
         </div>
       </span>
-      {/* <span className={style.container1}>
-       
-      </span> */}
-      {/* <span className={style.container1}>
- 
-      </span> */}
+     
     </div>
   );
 }

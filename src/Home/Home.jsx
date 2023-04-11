@@ -1,4 +1,4 @@
-import React, { useState ,useRef} from "react";
+import React, { useState ,useRef, useEffect} from "react";
 import Navbar from "../Navbar/Navbar";
 import style from "./Home.module.css";
 import DownloadIcon from '@mui/icons-material/Download';
@@ -8,7 +8,23 @@ import Header from "../Header/Header";
 
 function Home() {
 const[value,setValue]=useState('Untitled Document')
+const[color,setcolor]=useState('')
+const[Bgcolor,setBgcolor]=useState('red')
 const printDiv = useRef("");
+
+useEffect(()=>{
+  if(color=='some'){
+    setBgcolor('green')
+        
+   }
+},[Bgcolor])
+
+
+
+// const sheetContent = document.getElementById('edit');
+//    if(sheetContent === 'some'){
+//     document.execCommand("foreColor", "", e.target.value);
+//    }
 
   function handleremoveFormat(color) {
     document.execCommand("removeFormat");
@@ -30,8 +46,9 @@ const printDiv = useRef("");
   }
   
   
-
   return (
+    <>
+    
     <div className={style.main}>
       <Header 
       setValue={setValue}
@@ -49,8 +66,12 @@ const printDiv = useRef("");
         ></p>
     
       </div>
+
     <button onClick={ downloadFile}  className={style.floaticon}><DownloadIcon style={{fontSize:"35px",color:"white"}}/></button>
     </div>
+    <div><input type='text' onChange={(e)=>setcolor(e.target.value)} style={{color:`${Bgcolor}`}} value={color}/></div>
+
+    </>
   );
 }
 
